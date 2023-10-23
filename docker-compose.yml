@@ -6,7 +6,7 @@
       image: postgres:latest
       environment:
         POSTGRES_USER: ${POSTGRES_USER:-postgres}
-        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ifunggul}
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
         PGDATA: /data/postgres
       volumes:
         - postgres:/data/postgres
@@ -27,7 +27,7 @@
         - pgadmin:/var/lib/pgadmin
 
       ports:
-        - "${PGADMIN_PORT:-22121}:80"
+        - "${PGADMIN_PORT:-5050}:80"
       networks:
         - postgres
       restart: unless-stopped
